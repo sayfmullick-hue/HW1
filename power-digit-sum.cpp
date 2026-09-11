@@ -54,7 +54,7 @@ unsigned long long int power (unsigned int a, unsigned int b) {
 	}
 }
 
-// Turns a number into a vector seperating it by its place values
+// Turns the calculated power into a vector seperating it by its place values
 std::vector<int> vectorize_digits(unsigned long long n){
 	std::vector<int> v;
 	if (n == 0){
