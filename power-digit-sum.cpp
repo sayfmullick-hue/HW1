@@ -97,7 +97,7 @@ unsigned int NumberConversion(std::string str){
 	// attempts to parse the string to turn it into a unsigned int
 	// if it fails then it prints an error statement and terminates the execution
 	auto [ptr, ec] = std::from_chars(str.data(), str.data() + str.size(), num);
-	std::cout << "\nAttempting Number Conversion\n";
+	std::cout << "\nAttempting Number Conversion on "<<str<<" \n";
 	if (ec == std::errc::result_out_of_range) {
 		std::cout << "\nError: "<< str <<  " outside of unsigned int bounds!\n";
 		std::exit(EXIT_FAILURE);
