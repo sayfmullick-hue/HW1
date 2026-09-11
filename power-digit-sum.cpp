@@ -29,7 +29,7 @@ int main (int argc, char* argv[] ) {
 		std::vector<int> v = vectorize_digits(power_tot);
 		int sum = sum_vector(v);
 		std::string vect = vec_to_string(v);
-		//std::cout << "\n " << vect << " \n";
+		//std::cout << "\n " << vect << " \n"; used this to make sure vec_to_string() formatted correctly
 		std::cout << "\n "<< a << "^" << b << " = " << power_tot << std::endl;
 		std::cout <<"Sum Of Digits: " << sum << std::endl;
 		return 1;
@@ -54,7 +54,7 @@ unsigned long long int power (unsigned int a, unsigned int b) {
 	}
 }
 
-// 
+// Turns a number into a vector seperating it by its place values
 std::vector<int> vectorize_digits(unsigned long long n){
 	std::vector<int> v;
 	if (n == 0){
@@ -65,6 +65,7 @@ std::vector<int> vectorize_digits(unsigned long long n){
 			v.push_back(n % 10);
 			n /= 10;
 		}
+		// flips the vector so the numbers are in the correct order
 		std::reverse(v.begin(), v.end());
 	}
 	return v;
@@ -74,7 +75,7 @@ int sum_vector(std::vector<int> v){
 	return std::accumulate(v.begin(), v.end(), 0);
 }
 
-//
+//converts a vector of ints into a string with a list style format
 std::string vec_to_string(std::vector<int> vec){
 	
 	std::string vec_str = "[";
